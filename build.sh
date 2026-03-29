@@ -93,7 +93,7 @@ install_driver() {
     cat <<EOF | sudo tee /etc/systemd/system/qnap8528-load.service >/dev/null
 [Unit]
 Description=Load qnap8528 Kernel Module
-After=syslog.target network.target
+After=systemd-modules-load.service
 
 [Service]
 Type=oneshot
